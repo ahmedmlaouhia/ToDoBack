@@ -9,6 +9,8 @@ jobs:
         with:
           node-version: "16"
           cache: "npm"
+          cache-dependency-path: "**/package-lock.json"
+
       - name: installing dependecies
 
         run: echo "npm install"
