@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-
       - name: installing dependecies
-
         run: echo "npm install"
+      - name: building image with docker
+        run: docker build -t todoback .
