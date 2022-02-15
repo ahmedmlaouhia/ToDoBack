@@ -7,5 +7,3 @@ jobs:
       - uses: actions/checkout@v2
       - name: building image with docker
         run: docker build -t todoback .
-      - name: running compose
-        run: docker-compose up -d
