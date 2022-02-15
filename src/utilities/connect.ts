@@ -1,7 +1,10 @@
 import { connect as cnt } from "mongoose";
+import dotenv from "dotenv";
+
 const connect = async (callback: () => void) => {
+  dotenv.config();
   try {
-    await cnt("mongodb://root:root@mongo:27017/SampleDB?authSource=admin");
+    await cnt(`${process.env.MONGODB_URL}`);
     console.log("Connected to MongoDB");
     callback();
   } catch (error) {
