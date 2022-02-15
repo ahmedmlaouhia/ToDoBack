@@ -11,6 +11,8 @@ services:
     restart: always
     networks:
       - default
+    volumes:
+      - mongo-data:/data/db
 
   express:
     image: todoback
@@ -21,3 +23,6 @@ services:
     restart: always
     networks:
       - default
+volumes:
+  mongo-data:
+    driver: local
