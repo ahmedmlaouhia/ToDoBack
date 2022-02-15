@@ -6,8 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: building image with docker
-        uses: docker/docker@v2
         run: docker build -t todoback .
       - name: pushing image to docker hub
-        uses: actions/image-pusher@v2
         run: docker push masterbohmid/todo:todoback
