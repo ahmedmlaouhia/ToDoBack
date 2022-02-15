@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 const connect = async (callback: () => void) => {
   dotenv.config();
   try {
-    await cnt(`${process.env.MONGODB_URL}`);
+    await cnt("mongodb://root:root@mongo:27017/SampleDB?authSource=admin");
     console.log("Connected to MongoDB");
     callback();
   } catch (error) {

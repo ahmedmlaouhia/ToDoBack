@@ -11,11 +11,9 @@ services:
     restart: always
     networks:
       - default
-    volumes:
-      - mongo-data:/data/db
 
   express:
-    image: todoback1
+    image: todoback
     ports:
       - "6969:6969"
     depends_on:
@@ -23,6 +21,3 @@ services:
     restart: always
     networks:
       - default
-volumes:
-  mongo-data:
-    driver: local
