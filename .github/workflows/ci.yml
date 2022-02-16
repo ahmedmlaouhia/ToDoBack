@@ -11,4 +11,4 @@ jobs:
       - name: pushing image to docker hub
         uses: docker/build-push-action@v2
         with:
-          tag: masterbohmid/todo:latest
+          tags: masterbohmid/todo:latest
