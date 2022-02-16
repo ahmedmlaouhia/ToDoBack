@@ -12,6 +12,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build
+          echo ${{ secrets.MONGODB_URI }}
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: docker build -t todoback .
