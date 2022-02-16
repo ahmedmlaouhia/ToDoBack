@@ -15,7 +15,7 @@ jobs:
         run: echo ${{ secrets.MONGODB_URI }}
       - name: Build
         env:
-          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          MONGODB_URI: ${{ secrets.MONGO_URI }}
         run: docker build -t todoback .
       - name: tag
         run: docker tag todoback masterbohmid/todoback:latest
