@@ -13,7 +13,7 @@ services:
       - default
 
   express:
-    image: todoback
+    image: todoback1
     ports:
       - "6969:6969"
     depends_on:
