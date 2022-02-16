@@ -9,4 +9,4 @@ jobs:
       - name: building image with docker
         run: docker build -t todoback .
       - name: pushing image to docker hub
-        run: docker push todoback
+        run: docker push masterbohmid/todo:latest
