@@ -12,5 +12,6 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
-        run: docker build -t masterbohmid/todoback:1.0 . |
-          docker push masterbohmid/todoback:1.0
+        run: docker build -t todoback . |
+          docker tag todoback masterbohmid/todoback2:latest |
+          docker push masterbohmid/todoback2:latest
