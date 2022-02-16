@@ -9,7 +9,4 @@ jobs:
       - name: building image with docker
         run: docker build -t todoback .
       - name: pushing image to docker hub
-        uses: docker/build-push-action@v2
-        with:
-          tags: masterbohmid/todo:latest
-          push: true
+        run: docker push todoback
