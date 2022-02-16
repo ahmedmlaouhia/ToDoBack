@@ -13,7 +13,7 @@ services:
       - default
 
   express:
-    image: todoback
+    image: masterbohmid/todoback
     ports:
       - "6969:6969"
     depends_on:
