@@ -8,8 +8,8 @@ jobs:
       - name: building image with docker
         run: docker build -t todoback .
       - name: pushing image to docker hub
-        uses: actions/image-pusher@v2
+        uses: docker/push@v2
         with:
-          username: $DOCKER_USERNAME
-          password: $DOCKER_PASSWORD
-          image-name: $DOCKER_IMAGE_NAME
+          username: ${{secrets.DOCKER_HUB_USERNAME}}
+          password: ${{secrets.DOCKER_HUB_PASSWORD}}
+          image-name: ${{secrets.DOCKER_IMAGE_NAME}}
