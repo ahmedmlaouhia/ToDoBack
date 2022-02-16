@@ -12,4 +12,4 @@ jobs:
         with:
           username: ${{secrets.DOCKER_HUB_USERNAME}}
           password: ${{secrets.DOCKER_HUB_PASSWORD}}
-          image-name: ${{secrets.DOCKER_IMAGE_NAME}}
+          repository: masterbohmid/${{secrets.DOCKER_IMAGE_NAME}}
