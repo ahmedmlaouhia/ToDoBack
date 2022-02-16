@@ -8,4 +8,8 @@ jobs:
       - name: building image with docker
         run: docker build -t todoback .
       - name: pushing image to docker hub
-        run: docker push masterbohmid/todo:todoback
+        uses: actions/image-pusher@v2
+        with:
+          username: $DOCKER_USERNAME
+          password: $DOCKER_PASSWORD
+          image-name: $DOCKER_IMAGE_NAME
