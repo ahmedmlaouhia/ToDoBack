@@ -2,6 +2,8 @@ name: integration
 on: [push]
 jobs:
   build:
+    env:
+      MONGODB_URI: ${{ secrets.MONGO_URI }}
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -12,8 +14,7 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build
-        env:
-          MONGODB_URI: ${{ secrets.MONGO_URI }}
+
         run: docker build -t todoback .
       - name: tag
         run: docker tag todoback masterbohmid/todoback:latest
