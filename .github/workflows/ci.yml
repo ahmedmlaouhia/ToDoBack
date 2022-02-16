@@ -11,11 +11,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: secret
+        run: echo ${{ secrets.MONGODB_URI }}
       - name: Build
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
-        run: docker build -t todoback . |
-          echo ${{ secrets.MONGODB_URI }}
+        run: docker build -t todoback .
       - name: tag
         run: docker tag todoback masterbohmid/todoback:latest
       - name: push
