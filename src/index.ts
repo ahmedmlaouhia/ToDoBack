@@ -15,7 +15,6 @@ app.use(morgan("dev"));
 
 connect(() =>
   app.listen(6969, () => {
-    console.log("hello");
     console.log("Server running on port 6969");
   })
 );
