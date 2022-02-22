@@ -21,3 +21,13 @@ services:
     restart: always
     networks:
       - default
+
+  react:
+    image: masterbohmid/todofront
+    ports:
+      - "4173:80"
+    depends_on:
+      - express
+    restart: always
+    networks:
+      - default
