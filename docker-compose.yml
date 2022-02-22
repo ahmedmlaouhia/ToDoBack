@@ -10,7 +10,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=root
     restart: always
     networks:
-      - default
+      - ahmed_workspace_default
 
   express:
     image: masterbohmid/todoback
@@ -20,7 +20,7 @@ services:
       - mongo
     restart: always
     networks:
-      - default
+      - ahmed_workspace_default
 
   react:
     image: masterbohmid/todofront
@@ -30,4 +30,4 @@ services:
       - express
     restart: always
     networks:
-      - default
+      - ahmed_workspace_default
